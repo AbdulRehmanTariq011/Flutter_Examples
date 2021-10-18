@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         centerTitle: true,
         title: Text("Luddo App",
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.w800)),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.yellow,
       ),
       backgroundColor: Colors.white70,
       body: Dicepage(),
