@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -13,7 +12,27 @@ class MyApp extends StatelessWidget {
         centerTitle: true,
         title: Text("Luddo App",
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.w800)),
-        backgroundColor: Colors.yellow,
+        backgroundColor: Colors.blueAccent,
+        leading: Icon(
+          Icons.home,
+          color: Colors.black,
+        ),
+        actions: [
+          Icon(
+            Icons.refresh_rounded,
+            color: Colors.black,
+          ),
+          SizedBox(
+            width: 15,
+          ),
+          Icon(
+            Icons.menu,
+            color: Colors.black,
+          ),
+          SizedBox(
+            width: 20,
+          )
+        ],
       ),
       backgroundColor: Colors.white70,
       body: Dicepage(),
@@ -41,6 +60,34 @@ class _DicepageState extends State<Dicepage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+          height: 15.0,
+        ),
+        Row(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(
+              left: 70.0,
+            )),
+            Text(
+              "Player 1",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(
+              width: 150.0,
+            ),
+            Text(
+              "Player 2",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
         SizedBox(
           height: 15.0,
         ),
@@ -77,35 +124,9 @@ class _DicepageState extends State<Dicepage> {
             ),
           ],
         ),
-        SizedBox(
-          height: 15.0,
-        ),
+
         //row for player first
-        Row(
-          children: [
-            Padding(
-                padding: EdgeInsets.only(
-              left: 70.0,
-            )),
-            Text(
-              "Player 1",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            SizedBox(
-              width: 150.0,
-            ),
-            Text(
-              "Player 2",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
+
         SizedBox(
           height: 15.0,
         ),
@@ -136,7 +157,36 @@ class _DicepageState extends State<Dicepage> {
           ],
         ),
         SizedBox(
-          height: 15.0,
+          height: 30.0,
+        ),
+
+        Row(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(
+              left: 70.0,
+            )),
+            Text(
+              "Player 3",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(
+              width: 150.0,
+            ),
+            Text(
+              "Player 4",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 18.0,
         ),
         //Row2
         Row(
@@ -178,34 +228,7 @@ class _DicepageState extends State<Dicepage> {
           height: 15.0,
         ),
         //row for player second
-        Row(
-          children: [
-            Padding(
-                padding: EdgeInsets.only(
-              left: 70.0,
-            )),
-            Text(
-              "Player 3",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            SizedBox(
-              width: 150.0,
-            ),
-            Text(
-              "Player 4",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
+
         //row for total second
         Row(
           children: [
