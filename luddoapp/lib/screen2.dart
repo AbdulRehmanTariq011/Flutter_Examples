@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         centerTitle: true,
         title: Text("Luddo App",
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.w800)),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.yellow[300],
         leading: Icon(
           Icons.home,
           color: Colors.black,
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           )
         ],
       ),
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.yellow[200],
       body: Dicepage(),
     ));
   }
@@ -56,6 +56,7 @@ class _DicepageState extends State<Dicepage> {
   int count2 = 0;
   int count3 = 0;
   int count4 = 0;
+  var result1 = '';
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -63,30 +64,34 @@ class _DicepageState extends State<Dicepage> {
         SizedBox(
           height: 15.0,
         ),
-        Row(
-          children: [
-            Padding(
-                padding: EdgeInsets.only(
-              left: 70.0,
-            )),
-            Text(
-              "Player 1",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
+        Expanded(
+          child: Row(
+            children: [
+              Padding(
+                  padding: EdgeInsets.only(
+                left: 70.0,
+              )),
+              Text(
+                "Player 1",
+                style: TextStyle(
+                  color: Colors.blueGrey,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-            SizedBox(
-              width: 150.0,
-            ),
-            Text(
-              "Player 2",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
+              SizedBox(
+                width: 150.0,
               ),
-            ),
-          ],
+              Text(
+                "Player 2",
+                style: TextStyle(
+                  color: Colors.blueGrey,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
         ),
         SizedBox(
           height: 15.0,
@@ -177,6 +182,7 @@ class _DicepageState extends State<Dicepage> {
             Text(
               "Player 3",
               style: TextStyle(
+                color: Colors.blueGrey,
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
               ),
@@ -187,6 +193,7 @@ class _DicepageState extends State<Dicepage> {
             Text(
               "Player 4",
               style: TextStyle(
+                color: Colors.blueGrey,
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
               ),
@@ -270,6 +277,60 @@ class _DicepageState extends State<Dicepage> {
               ),
             ),
           ],
+        ),
+
+        Expanded(
+          child: FlatButton(
+            color: Colors.black,
+            child: Text(
+              "Check",
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
+            onPressed: () {
+              if (total1 > total2 && total1 > total3 && total1 > total4) {
+                result1 = 'player1';
+              } else if (total2 > total1 &&
+                  total2 > total3 &&
+                  total2 > total4) {
+                result1 = 'player2';
+              } else if (total3 > total2 &&
+                  total3 > total1 &&
+                  total3 > total4) {
+                result1 = 'player3';
+              } else if (total4 > total2 &&
+                  total4 > total3 &&
+                  total4 > total1) {
+                result1 = 'player4';
+              }
+            },
+          ),
+        ),
+
+        Expanded(
+          child: Row(
+            children: [
+              Padding(padding: EdgeInsets.only(left: 90)),
+              Text(
+                "Player has won: $result1",
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+              SizedBox(
+                width: 80,
+              ),
+              Icon(
+                Icons.refresh,
+                color: Colors.black,
+                size: 40,
+              )
+            ],
+          ),
         ),
       ],
     );
