@@ -48,14 +48,14 @@ class _DicepageState extends State<Dicepage> {
   int num2 = 1;
   int num3 = 1;
   int num4 = 1;
-  int score1 = 1;
-  int score2 = 1;
-  int score3 = 1;
-  int score4 = 1;
   int total1 = 0;
   int total2 = 0;
   int total3 = 0;
   int total4 = 0;
+  int count1 = 0;
+  int count2 = 0;
+  int count3 = 0;
+  int count4 = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -98,11 +98,14 @@ class _DicepageState extends State<Dicepage> {
               child: FlatButton(
                 onPressed: () {
                   setState(() {
-                    num1 = Random().nextInt(6) + 1;
-                    total1 = num1 + total1;
+                    count1 = 1 + count1;
+                    if (count1 < 11) {
+                      num1 = Random().nextInt(6) + 1;
+                      total1 = num1 + total1;
+                      print(count1);
+                      print("Player 1 has Total Score :$total1");
+                    }
                   });
-                  score1 = score1 + num1;
-                  print("Player 1 has Total Score :$total1");
                 },
                 child: Image(
                   image: AssetImage("images/dice$num1.png"),
@@ -113,11 +116,14 @@ class _DicepageState extends State<Dicepage> {
               child: FlatButton(
                 onPressed: () {
                   setState(() {
-                    num2 = Random().nextInt(6) + 1;
-                    total2 = num2 + total2;
+                    count2 = 1 + count2;
+                    if (count2 < 11) {
+                      num2 = Random().nextInt(6) + 1;
+                      total2 = num2 + total2;
+                      print(count2);
+                      print("Player 2 has Total Score :$total2");
+                    }
                   });
-                  score2 = score2 + num2;
-                  print("Player 2 has Total Score :$total2");
                 },
                 child: Image(
                   image: AssetImage("images/dice$num2.png"),
@@ -197,11 +203,14 @@ class _DicepageState extends State<Dicepage> {
               child: FlatButton(
                 onPressed: () {
                   setState(() {
-                    num3 = Random().nextInt(6) + 1;
-                    total3 = num3 + total3;
+                    count3 = 1 + count3;
+                    if (count3 < 11) {
+                      num3 = Random().nextInt(6) + 1;
+                      total3 = num3 + total3;
+                      print(count3);
+                      print("Player 3 has Total Score :$total3");
+                    }
                   });
-                  score3 = score3 + num3;
-                  print("Player 3 has Total Score :$total3");
                 },
                 child: Image(
                   image: AssetImage("images/dice$num3.png"),
@@ -212,11 +221,14 @@ class _DicepageState extends State<Dicepage> {
               child: FlatButton(
                 onPressed: () {
                   setState(() {
-                    num4 = Random().nextInt(6) + 1;
-                    total4 = num4 + total4;
+                    count4 = 1 + count4;
+                    if (count4 < 11) {
+                      num4 = Random().nextInt(6) + 1;
+                      total4 = num4 + total4;
+                      print(count4);
+                      print("Player 4 has Total Score :$total4");
+                    }
                   });
-                  score4 = score4 + num4;
-                  print("Player 4 has Total Score :$total4");
                 },
                 child: Image(
                   image: AssetImage("images/dice$num4.png"),
