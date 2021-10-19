@@ -18,10 +18,6 @@ class MyApp extends StatelessWidget {
           color: Colors.black,
         ),
         actions: [
-          Icon(
-            Icons.refresh_rounded,
-            color: Colors.black,
-          ),
           SizedBox(
             width: 15,
           ),
@@ -56,6 +52,10 @@ class _DicepageState extends State<Dicepage> {
   int score2 = 1;
   int score3 = 1;
   int score4 = 1;
+  int total1 = 0;
+  int total2 = 0;
+  int total3 = 0;
+  int total4 = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -99,9 +99,10 @@ class _DicepageState extends State<Dicepage> {
                 onPressed: () {
                   setState(() {
                     num1 = Random().nextInt(6) + 1;
+                    total1 = num1 + total1;
                   });
                   score1 = score1 + num1;
-                  print("Player 1 has Total Score :$score1");
+                  print("Player 1 has Total Score :$total1");
                 },
                 child: Image(
                   image: AssetImage("images/dice$num1.png"),
@@ -113,9 +114,10 @@ class _DicepageState extends State<Dicepage> {
                 onPressed: () {
                   setState(() {
                     num2 = Random().nextInt(6) + 1;
+                    total2 = num2 + total2;
                   });
                   score2 = score2 + num2;
-                  print("Player 2 has Total Score :$score2");
+                  print("Player 2 has Total Score :$total2");
                 },
                 child: Image(
                   image: AssetImage("images/dice$num2.png"),
@@ -135,22 +137,22 @@ class _DicepageState extends State<Dicepage> {
           children: [
             Padding(
                 padding: EdgeInsets.only(
-              left: 45.0,
+              left: 10.0,
             )),
             Text(
-              "Total Score:",
+              "Total Score:  $total1",
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 20,
                 fontWeight: FontWeight.w800,
               ),
             ),
             SizedBox(
-              width: 70.0,
+              width: 75.0,
             ),
             Text(
-              "Total Score:",
+              "Total Score:  $total2",
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 20,
                 fontWeight: FontWeight.w800,
               ),
             ),
@@ -196,9 +198,10 @@ class _DicepageState extends State<Dicepage> {
                 onPressed: () {
                   setState(() {
                     num3 = Random().nextInt(6) + 1;
+                    total3 = num3 + total3;
                   });
                   score3 = score3 + num3;
-                  print("Player 3 has Total Score :$score3");
+                  print("Player 3 has Total Score :$total3");
                 },
                 child: Image(
                   image: AssetImage("images/dice$num3.png"),
@@ -210,9 +213,10 @@ class _DicepageState extends State<Dicepage> {
                 onPressed: () {
                   setState(() {
                     num4 = Random().nextInt(6) + 1;
+                    total4 = num4 + total4;
                   });
                   score4 = score4 + num4;
-                  print("Player 4 has Total Score :$score4");
+                  print("Player 4 has Total Score :$total4");
                 },
                 child: Image(
                   image: AssetImage("images/dice$num4.png"),
@@ -234,22 +238,22 @@ class _DicepageState extends State<Dicepage> {
           children: [
             Padding(
                 padding: EdgeInsets.only(
-              left: 45.0,
+              left: 10.0,
             )),
             Text(
-              "Total Score:",
+              "Total Score:  $total3",
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 20,
                 fontWeight: FontWeight.w800,
               ),
             ),
             SizedBox(
-              width: 70.0,
+              width: 75.0,
             ),
             Text(
-              "Total Score:",
+              "Total Score:  $total4",
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 20,
                 fontWeight: FontWeight.w800,
               ),
             ),
