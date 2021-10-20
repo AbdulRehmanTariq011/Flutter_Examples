@@ -305,6 +305,7 @@ class _DicepageState extends State<Dicepage> {
                   total4 > total1) {
                 result1 = 'player4';
               }
+              setState(() {});
             },
           ),
         ),
@@ -324,10 +325,19 @@ class _DicepageState extends State<Dicepage> {
               SizedBox(
                 width: 80,
               ),
-              Icon(
-                Icons.refresh,
-                color: Colors.black,
-                size: 40,
+              GestureDetector(
+                onTap: () => {
+                  total1 = 0,
+                  total2 = 0,
+                  total3 = 0,
+                  total4 = 0,
+                  setState(() {}),
+                },
+                child: Icon(
+                  Icons.refresh,
+                  color: Colors.black,
+                  size: 40,
+                ),
               )
             ],
           ),
