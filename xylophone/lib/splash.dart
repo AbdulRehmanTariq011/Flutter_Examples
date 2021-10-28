@@ -1,5 +1,7 @@
+// ignore_for_file: unnecessary_new, prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:xylophone/screen2.dart';
+import 'package:xylophone/screen.dart';
 
 import 'main.dart';
 
@@ -20,20 +22,52 @@ class _splashState extends State<splash> {
   _navigatetohome() async {
     await Future.delayed(Duration(milliseconds: 3000), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => XylophoneApp()));
+        context, MaterialPageRoute(builder: (context) => Screen()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.yellow[200],
         body: Stack(fit: StackFit.expand, children: [
           new Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
-                padding: EdgeInsets.only(bottom: 50.0),
+                  padding: const EdgeInsets.only(bottom: 100.0),
+                  child: RichText(
+                      // ignore: prefer_const_literals_to_create_immutables
+                      text: TextSpan(children: [
+                    TextSpan(
+                        text: 'X',
+                        style: TextStyle(color: Colors.red, fontSize: 40)),
+                    TextSpan(
+                        text: 'y',
+                        style: TextStyle(color: Colors.green, fontSize: 40)),
+                    TextSpan(
+                        text: 'l',
+                        style: TextStyle(color: Colors.blue, fontSize: 40)),
+                    TextSpan(
+                        text: 'o',
+                        style: TextStyle(color: Colors.purple, fontSize: 40)),
+                    TextSpan(
+                        text: 'p',
+                        style: TextStyle(color: Colors.blue, fontSize: 40)),
+                    TextSpan(
+                        text: 'h',
+                        style: TextStyle(color: Colors.purple, fontSize: 40)),
+                    TextSpan(
+                        text: 'o',
+                        style: TextStyle(color: Colors.blue, fontSize: 40)),
+                    TextSpan(
+                        text: 'n',
+                        style: TextStyle(color: Colors.purple, fontSize: 40)),
+                    TextSpan(
+                        text: 'e',
+                        style: TextStyle(color: Colors.purple, fontSize: 40)),
+                  ]))),
+              Padding(
+                padding: EdgeInsets.only(bottom: 100.0),
                 child: new Image.asset(
                   'images/xp.jpg',
                   height: 150.0,
@@ -41,11 +75,11 @@ class _splashState extends State<splash> {
                 ),
               ),
               Text(
-                "Welcom to Luddo Game",
+                "Welcome",
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
-                  color: Colors.red,
+                  color: Colors.black,
                 ),
               )
             ],
