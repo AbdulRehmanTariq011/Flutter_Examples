@@ -24,12 +24,23 @@ class _splashState extends State<splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.yellow[600],
         body: Stack(fit: StackFit.expand, children: [
           new Column(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 50.0),
+                child: Text(
+                  "Ludo Game",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.only(bottom: 50.0),
                 child: new Image.asset(
@@ -39,13 +50,13 @@ class _splashState extends State<splash> {
                 ),
               ),
               Text(
-                "Welcom to Luddo Game",
+                "Welcome",
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
-                  color: Colors.red,
+                  color: Colors.black,
                 ),
-              )
+              ),
             ],
           ),
         ]));

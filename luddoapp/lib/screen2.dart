@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
           Icons.home,
           color: Colors.black,
         ),
+        // ignore: prefer_const_literals_to_create_immutables
         actions: [
           SizedBox(
             width: 15,
@@ -66,11 +69,11 @@ class _DicepageState extends State<Dicepage> {
         ),
         Expanded(
           child: Row(
+            // ignore: prefer_const_literals_to_create_immutables
             children: [
               Padding(
-                  padding: EdgeInsets.only(
-                left: 70.0,
-              )),
+                padding: EdgeInsets.all(10.0),
+              ),
               Text(
                 "Player 1",
                 style: TextStyle(
@@ -158,7 +161,7 @@ class _DicepageState extends State<Dicepage> {
               ),
             ),
             SizedBox(
-              width: 75.0,
+              width: 60.0,
             ),
             Text(
               "Total Score:  $total2",
@@ -174,11 +177,9 @@ class _DicepageState extends State<Dicepage> {
         ),
 
         Row(
+          // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Padding(
-                padding: EdgeInsets.only(
-              left: 70.0,
-            )),
+            Padding(padding: EdgeInsets.all(10.0)),
             Text(
               "Player 3",
               style: TextStyle(
@@ -267,7 +268,7 @@ class _DicepageState extends State<Dicepage> {
               ),
             ),
             SizedBox(
-              width: 75.0,
+              width: 60.0,
             ),
             Text(
               "Total Score:  $total4",
@@ -281,7 +282,7 @@ class _DicepageState extends State<Dicepage> {
 
         Expanded(
           child: FlatButton(
-            color: Colors.black,
+            color: Colors.blue,
             child: Text(
               "Check",
               style: TextStyle(
@@ -313,7 +314,7 @@ class _DicepageState extends State<Dicepage> {
         Expanded(
           child: Row(
             children: [
-              Padding(padding: EdgeInsets.only(left: 90)),
+              Padding(padding: EdgeInsets.all(10.0)),
               Text(
                 "Player has won: $result1",
                 style: TextStyle(
@@ -331,6 +332,11 @@ class _DicepageState extends State<Dicepage> {
                   total2 = 0,
                   total3 = 0,
                   total4 = 0,
+                  num1 = 1,
+                  num2 = 1,
+                  num3 = 1,
+                  num4 = 1,
+                  result1 = '',
                   setState(() {}),
                 },
                 child: Icon(
