@@ -3,12 +3,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:quizzapp/splash.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'quiz_brain.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
-void main() => runApp(QuizPage());
+void main() => runApp(splash());
 
 class QuizPage extends StatefulWidget {
   @override
