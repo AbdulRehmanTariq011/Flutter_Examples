@@ -6,6 +6,6 @@ import 'package:numbergame/splash.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: play1(),
+    home: splash(),
   ));
 }
