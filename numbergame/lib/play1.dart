@@ -45,6 +45,7 @@ class _play1State extends State<play1> {
       _startTimer();
     }
     return Scaffold(
+      backgroundColor: Colors.orange[400],
       appBar: AppBar(
         backgroundColor: Colors.blue,
         centerTitle: true,
@@ -95,7 +96,7 @@ class _play1State extends State<play1> {
                     )),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 170, bottom: 90),
+                padding: EdgeInsets.only(left: 100, bottom: 90),
                 child: TextButton(
                     style: ButtonStyle(
                         backgroundColor:
@@ -118,7 +119,7 @@ class _play1State extends State<play1> {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 100, bottom: 90),
+                padding: EdgeInsets.only(left: 80, bottom: 100),
                 child: TextButton(
                     style: ButtonStyle(
                         backgroundColor:
@@ -135,7 +136,7 @@ class _play1State extends State<play1> {
                     )),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 140, bottom: 90),
+                padding: EdgeInsets.only(left: 100, bottom: 100),
                 child: TextButton(
                     style: ButtonStyle(
                         backgroundColor:

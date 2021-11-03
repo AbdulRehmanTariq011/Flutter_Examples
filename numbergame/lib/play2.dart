@@ -45,6 +45,7 @@ class _play1State extends State<play2> {
       _startTimer();
     }
     return Scaffold(
+      backgroundColor: Colors.orange[200],
       appBar: AppBar(
         backgroundColor: Colors.blue,
         centerTitle: true,
@@ -86,7 +87,7 @@ class _play1State extends State<play2> {
                       sec = 5;
                       first = true;
                       setState(() {
-                        if (num != 10) num++;
+                        if (num != 20) num++;
                       });
                     },
                     child: Text(
@@ -95,7 +96,7 @@ class _play1State extends State<play2> {
                     )),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 170, bottom: 90),
+                padding: EdgeInsets.only(left: 100, bottom: 90),
                 child: TextButton(
                     style: ButtonStyle(
                         backgroundColor:
@@ -105,7 +106,7 @@ class _play1State extends State<play2> {
                       sec = 5;
                       first = true;
                       setState(() {
-                        if (num > 1) num--;
+                        if (num > 11) num--;
                       });
                     },
                     child: Text(
@@ -118,7 +119,7 @@ class _play1State extends State<play2> {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 100, bottom: 90),
+                padding: EdgeInsets.only(left: 80, bottom: 90),
                 child: TextButton(
                     style: ButtonStyle(
                         backgroundColor:
@@ -135,7 +136,7 @@ class _play1State extends State<play2> {
                     )),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 140, bottom: 90),
+                padding: EdgeInsets.only(left: 100, bottom: 90),
                 child: TextButton(
                     style: ButtonStyle(
                         backgroundColor:

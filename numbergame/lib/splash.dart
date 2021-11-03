@@ -27,7 +27,7 @@ class _splashState extends State<splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[700],
+        backgroundColor: Color.fromRGBO(236, 240, 223, 1),
         body: Stack(fit: StackFit.expand, children: [
           new Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +35,7 @@ class _splashState extends State<splash> {
               Padding(
                 padding: EdgeInsets.only(bottom: 100.0),
                 child: new Image.asset(
-                  'images/number.jpg',
+                  'images/splash.png',
                   height: 250.0,
                   fit: BoxFit.scaleDown,
                 ),

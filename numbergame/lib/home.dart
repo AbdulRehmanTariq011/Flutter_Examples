@@ -90,11 +90,23 @@ class home extends StatelessWidget {
             ),
             ListTile(
               title: const Text('1 to 10'),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => play1(),
+                    ));
+              },
             ),
             ListTile(
               title: const Text('11 to 20'),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => play2(),
+                    ));
+              },
             ),
           ],
         ),
