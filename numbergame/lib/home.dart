@@ -18,7 +18,7 @@ class home extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 160),
+            padding: EdgeInsets.only(left: 110),
             child: TextButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.blue)),
@@ -35,7 +35,7 @@ class home extends StatelessWidget {
                 )),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 160),
+            padding: EdgeInsets.only(left: 110),
             child: TextButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.blue)),
