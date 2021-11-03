@@ -3,13 +3,18 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:quizzapp/contact.dart';
 import 'package:quizzapp/splash.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'quiz_brain.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
-void main() => runApp(splash());
+void main() {
+  runApp(MaterialApp(
+    home: splash(),
+  ));
+}
 
 class QuizPage extends StatefulWidget {
   @override
@@ -27,7 +32,7 @@ class _QuizPageState extends State<QuizPage> {
         Alert(
           context: context,
           title: 'Finished!',
-          desc: 'You\'ve reached the end of the quiz.',
+          desc: 'You have completed the quiz.',
         ).show();
 
         quizBrain.reset();
@@ -77,18 +82,36 @@ class _QuizPageState extends State<QuizPage> {
 
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.orange,
         appBar: AppBar(
-          title: const Text("Quiz App"),
+          backgroundColor: Colors.black,
+          centerTitle: true,
+          title: const Text("Quiz App", style: TextStyle(fontSize: 30)),
+          leading: Icon(
+            Icons.home,
+            size: 40,
+          ),
+          actions: [
+            Icon(
+              Icons.refresh,
+              size: 40,
+            ),
+            SizedBox(
+              width: 30,
+            ),
+          ],
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Center(
-              child: Text(
-                "$sec",
-                style: TextStyle(fontSize: 30, color: Colors.white),
+            Padding(
+              padding: EdgeInsets.only(top: 30, left: 400),
+              child: Center(
+                child: Text(
+                  "$sec",
+                  style: TextStyle(fontSize: 40, color: Colors.black),
+                ),
               ),
             ),
             Expanded(
@@ -155,9 +178,3 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 }
-
-/*
-question1: 'You can lead a cow down stairs but not up stairs.', false,
-question2: 'Approximately one quarter of human bones are in the feet.', true,
-question3: 'A slug\'s blood is green.', true,
-*/
