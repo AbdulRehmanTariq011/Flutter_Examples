@@ -68,8 +68,21 @@ class _gpaState extends State<gpa> {
               actions: [
                 Text("Grade: $grade"),
                 Text("Gpa: $gp"),
+                ElevatedButton(
+                    onPressed: () {
+                      reset();
+                    },
+                    child: Text("Ok"))
               ],
             ));
+  }
+
+  void reset() {
+    // gp = 0;
+    // grade = "";
+    // start = 0;
+    // start1 = 0;
+    // credit = 0;
   }
 
   void calculate() {
@@ -87,155 +100,140 @@ class _gpaState extends State<gpa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("GPA Calculator"),
-        ),
-        body: Column(
-          children: [
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Theroy Marks",
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Text(
-                    "$start",
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  SizedBox(
-                    height: 5.0,
-                  ),
-                  Slider(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("GPA Calculator"),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Theroy Marks",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  "$start",
+                  style: TextStyle(fontSize: 30),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                SliderTheme(
+                  data: SliderTheme.of(context).copyWith(
+                      activeTrackColor: Colors.red,
+                      thumbColor: Colors.black,
+                      thumbShape:
+                          RoundSliderThumbShape(enabledThumbRadius: 15.0)),
+                  child: Slider(
                       value: start.toDouble(),
                       min: 0.0,
                       max: 100.0,
-                      activeColor: Colors.red,
                       inactiveColor: Colors.blue,
                       onChanged: (double newValue) {
                         setState(() {
                           start = newValue.round();
                         });
                       }),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Total Marks:", style: TextStyle(fontSize: 20)),
-                      Text("100", style: TextStyle(fontSize: 20))
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Obtain Marsks:", style: TextStyle(fontSize: 20)),
-                      Text("$start", style: TextStyle(fontSize: 20))
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Lab Marks",
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Text(
-                    "$start1",
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  SizedBox(
-                    height: 5.0,
-                  ),
-                  Slider(
+                ),
+                SizedBox(
+                  height: 30.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Lab Marks",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  "$start1",
+                  style: TextStyle(fontSize: 30),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                SliderTheme(
+                  data: SliderTheme.of(context).copyWith(
+                      activeTrackColor: Colors.red,
+                      thumbColor: Colors.black,
+                      thumbShape:
+                          RoundSliderThumbShape(enabledThumbRadius: 15.0)),
+                  child: Slider(
                       value: start1.toDouble(),
                       min: 0.0,
                       max: 100.0,
-                      activeColor: Colors.red,
                       inactiveColor: Colors.blue,
                       onChanged: (double newValue) {
                         setState(() {
                           start1 = newValue.round();
                         });
                       }),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Total Marks:", style: TextStyle(fontSize: 20)),
-                      Text("100", style: TextStyle(fontSize: 20))
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Obtain Marsks:", style: TextStyle(fontSize: 20)),
-                      Text("$start1", style: TextStyle(fontSize: 20))
-                    ],
-                  ),
-                  SizedBox(
-                    height: 25.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Credit Hours",
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    "$credit",
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  SizedBox(
-                    height: 5.0,
-                  ),
-                  Slider(
+                ),
+                SizedBox(
+                  height: 25.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Credit Hours",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+                Text(
+                  "$credit",
+                  style: TextStyle(fontSize: 30),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                SliderTheme(
+                  data: SliderTheme.of(context).copyWith(
+                      activeTrackColor: Colors.red,
+                      thumbColor: Colors.black,
+                      thumbShape:
+                          RoundSliderThumbShape(enabledThumbRadius: 15.0)),
+                  child: Slider(
                       value: credit.toDouble(),
                       min: 0.0,
                       max: 4.0,
-                      activeColor: Colors.red,
                       inactiveColor: Colors.blue,
                       onChanged: (double newValue) {
                         setState(() {
                           credit = newValue.round();
                         });
                       }),
-                ],
-              ),
+                )
+              ],
             ),
-            ElevatedButton(
-                onPressed: () {
-                  calculate();
-                },
-                child: Text("Calculate"))
-          ],
-        ));
+          ),
+          ElevatedButton(
+              onPressed: () {
+                calculate();
+              },
+              child: Text("Calculate"))
+        ],
+      ),
+    );
   }
 }

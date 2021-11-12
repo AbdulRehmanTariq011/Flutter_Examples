@@ -13,7 +13,7 @@ class _sgpaState extends State<sgpa> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("SGPA"),
+        title: Text("SGPA Calculator"),
       ),
     );
   }
