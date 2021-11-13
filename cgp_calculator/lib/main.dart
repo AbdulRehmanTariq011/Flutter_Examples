@@ -1,4 +1,5 @@
 // ignore: unused_import
+import 'package:cgp_calculator/cgpa.dart';
 import 'package:cgp_calculator/gpa.dart';
 import 'package:cgp_calculator/sgpa.dart';
 import 'package:cgp_calculator/splash.dart';
