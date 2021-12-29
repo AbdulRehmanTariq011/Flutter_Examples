@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:password_dairy/new.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -8,7 +9,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  static List<String> password = [];
+  // ignore: deprecated_member_use
+  List<String> itms = [];
+  late String temp;
+  late String pass;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,11 +52,6 @@ class _HomeState extends State<Home> {
                                     border: OutlineInputBorder(),
                                     labelText: 'Enter Your Code',
                                   ),
-                                  validator: (value) {
-                                    if (value!.isEmpty) {
-                                      return "Invalid Security Code";
-                                    }
-                                  },
                                 ),
                               ),
                               SizedBox(
@@ -63,53 +62,11 @@ class _HomeState extends State<Home> {
                                 child: ElevatedButton(
                                   child: Text('OK'),
                                   onPressed: () async {
-                                    showDialog(
-                                        barrierDismissible: false,
-                                        context: context,
-                                        builder: (context) {
-                                          return AlertDialog(
-                                            title: Text("Enter Details"),
-                                            content: SizedBox(
-                                              height: 220,
-                                              child: Column(children: [
-                                                Form(
-                                                  child: TextFormField(
-                                                    keyboardType: TextInputType
-                                                        .visiblePassword,
-                                                    decoration: InputDecoration(
-                                                      border:
-                                                          OutlineInputBorder(),
-                                                      labelText: 'Discription',
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                Form(
-                                                  child: TextFormField(
-                                                    keyboardType: TextInputType
-                                                        .visiblePassword,
-                                                    decoration: InputDecoration(
-                                                      border:
-                                                          OutlineInputBorder(),
-                                                      labelText: 'Password',
-                                                    ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          top: 20.0),
-                                                  child: ElevatedButton(
-                                                    child: Text('OK'),
-                                                    onPressed: () async {},
-                                                  ),
-                                                ),
-                                              ]),
-                                            ),
-                                          );
-                                        });
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) => New(),
+                                        ));
                                   },
                                 ),
                               ),
